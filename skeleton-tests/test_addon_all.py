@@ -10,7 +10,7 @@ import subprocess
 
 def test_addon_all(tmpdir, capsys, config):
     answers_init_path = os.path.join(tmpdir.strpath, "answers.ini")
-    package_dir = os.path.abspath(tmpdir.strpath,)
+    package_dir = os.path.abspath(tmpdir.strpath)
     template = """[variables]
 package.description = Dummy package
 package.example = True
@@ -46,7 +46,7 @@ plone.version = {version}
         print(e)
     assert result == 0
 
-    wd = os.path.abspath(os.path.join(tmpdir.strpath, config.package_name),)
+    wd = os.path.abspath(os.path.join(tmpdir.strpath, config.package_name))
 
     # generate subtemplate content_type:
     template = """[variables]
